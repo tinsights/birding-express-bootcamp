@@ -1,0 +1,112 @@
+<%- include('partials/head') %>
+<%- include('partials/navbar') %>
+
+<div class="container entry-form" >
+  <h2>Bird Sighting Entry</h2>
+  <p>Tell us what you saw!</p>
+  <div class="row justify-content-center align-items-center" style="height: 80vh">
+    <div class="col-12 col-md-10">
+      <form class="entry-form-container" action="/note" method="POST" >
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label for="flock_size">Flock size: </label>
+              <input class="form-control" name="flock_size" id="flock_size">
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label for="date">Date: </label>
+              <input class="form-control" type="date" name="date" id="date" min="2015/01/01">
+            </div>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <div class="row">
+            <div class="col-8 justify-content-start">
+              <label for="species_id">Species: </label>
+              <select class="form-control" name="species_id" id="species_id">
+              <% species.forEach((type) => { %>
+              <option value="<%= type.id %>"><%= type.name %></option>
+            <% }) %>
+              </select>
+            </div>
+          </div>
+        </div>
+    
+        <p>Behaviour: </p>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" name="behaviour" value="bathing" id="behaviour">
+          <label class="form-check-label" for="behaviour">
+          Bathing
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" name="behaviour" value="feeding" id="behaviour">
+          <label class="form-check-label" for="behaviour">
+          Feeding
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" name="behaviour" value="walking" id="behaviour">
+          <label class="form-check-label" for="behaviour">
+          Walking
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" name="behaviour" value="resting" id="behaviour">
+          <label class="form-check-label" for="behaviour">
+          Resting
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" name="behaviour" value="flocking" id="behaviour">
+          <label class="form-check-label" for="behaviour">
+          Flocking
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" name="behaviour" value="climbing tree" id="behaviour">
+          <label class="form-check-label" for="behaviour">
+          Climbing tree
+          </label>
+        </div>
+
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" name="behaviour" value="drinking" id="behaviour">
+          <label class="form-check-label" for="behaviour">
+            Drinking
+          </label>
+        </div>
+
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" name="behaviour" value="singing" id="behaviour">
+          <label class="form-check-label" for="behaviour">
+          Singing
+          </label>
+        </div>
+
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" name="behaviour" value="preening" id="behaviour">
+          <label class="form-check-label" for="behaviour">
+          Preening
+          </label>
+        </div>
+
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" name="behaviour" value="hovering" id="behaviour">
+          <label class="form-check-label" for="behaviour">
+          Hovering
+          </label>
+        </div>
+  
+  
+        <br><br>
+        <button type="submit" class="btn btn-secondary btn-block">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include ('partials/footer') %>

@@ -1,0 +1,26 @@
+<%- include ('partials/head') %>
+<%- include ('partials/navbar') %>
+    
+   
+      
+  <div class="container landing-page"> 
+    <h3>Bird watching records</h3>
+    <br>
+      <div class="table-responsive">
+        <table class="table">
+          <tr>
+            <th>Date</th>
+            <th>Flock size</th>
+            <th>Species</th>
+          </tr>
+          <tr>
+            <% for (let i = 0; i < data.length; i += 1) { %> 
+            <td><%= data[i].date %></a></td>
+            <td><%= data[i].flock_size %></td>
+            <td><%= data[i].name %></td>
+            <% } %>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <%- include ('partials/footer') %>

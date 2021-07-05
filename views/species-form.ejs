@@ -1,0 +1,32 @@
+<%- include('partials/head') %>
+<%- include('partials/navbar') %>
+
+<div class="container entry-form" >
+  <h2>New Species Entry</h2>
+  <p>Saw someone we don't know?</p>
+  <div class="row justify-content-center align-items-center" style="height: 80vh">
+    <div class="col-12 col-md-10">
+      <form class="entry-form-container" action="/species" method="POST" >
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label for="name">Name: </label>
+              <input class="form-control" name="name" id="name">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label for="scientific_name">Scientific name: </label>
+              <input class="form-control" type="scientific_name" name="scientific_name" id="scientific_name" >
+            </div>
+          </div>
+        </div>
+        <br><br>
+        <button type="submit" class="btn btn-secondary btn-block">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+<%- include ('partials/footer') %>

@@ -1,0 +1,19 @@
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:rgb(44, 163, 254)">
+    <a class="navbar-brand" href="/"><i class="fas fa-dove" style="color: lightslategrey"></i></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="/login">Log in </a>
+        <a class="nav-item nav-link" href="/note">Entry form</a>
+        <a class="nav-item nav-link" href="/behaviour">Behaviour</a>
+        <a class="nav-item nav-link" href="/species/all">Species</a>
+        <form action="/logout?_method=DELETE" method="POST">
+
+          <button type="submit" class="btn btn-outline-dark btn btn-md">Logout</button>
+        </form>
+      </div>
+    </div>
+  </nav>

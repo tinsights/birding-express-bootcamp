@@ -1,0 +1,30 @@
+<%- include ('partials/head') %>
+<%- include ('partials/navbar') %>
+<div class="single-note-wrapper">
+  <div class="container" id="single-note-text">
+    <% Object.keys(eachNote).forEach((inputField) => { %>
+      <% if (inputField === 'email') { %>
+      <div class="row" >  
+        <div class="col-md-2"> <%= 'author' %>:</div>
+        <div class="col-md-10"> <%= eachNote[inputField] %></div>
+      </div>
+      <br>
+      <% } else { %>
+      <div class="row" >  
+        <div class="col-md-2"> <%= inputField %>:</div>
+        <div class="col-md-10"> <%= eachNote[inputField] %></div>
+      </div>
+      <br>
+      <% }; %>
+      <% }); %>
+      <a href="/note/<%= eachNote.id %>/edit" class="btn btn-secondary" role="button">Edit</a>
+      <form action="/note/<%= eachNote.id %>/comment" method="POST">
+        <div class="form-group">
+          <label for="comment">Comments</label>
+          <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
+        </div>
+        <input type="submit" value="Submit" />
+      </form>
+  </div>
+</div>
+<%- include ('partials/footer') %>

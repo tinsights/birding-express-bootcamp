@@ -1,0 +1,25 @@
+<%- include ('partials/head') %>
+<%- include ('partials/navbar') %>
+
+<div class="container landing-page"> 
+  <h3>User records</h3>
+  <br>
+  <div class="table-responsive">
+    <table class="table">
+      <tr>
+        <th>Date</th>
+        <th>Flock size</th>
+        <th>Species</th>
+      </tr>
+      <tr>
+        <% for (let i = 0; i < userNotes.length; i += 1) { %> 
+        <td><a href="/note/<%= userNotes[i].id %>" style="color: darkslategray"><%= userNotes[i].date %></a></td>
+        
+        <td><%= userNotes[i].flock_size %></td>
+        <td><%= userNotes[i].name %></td>
+      </tr>
+        <% } %>
+    </table>
+  </div>
+</div>
+<%- include ('partials/footer') %>

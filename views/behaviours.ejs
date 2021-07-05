@@ -1,0 +1,22 @@
+<%- include ('partials/head') %>
+<%- include ('partials/navbar') %>
+
+<div class="container landing-page"> 
+     <h3>Bird behaviours</h3>
+      <br>
+        <div class="table-responsive">
+          <table class="table">
+            <tr>
+              <th>ID</th>
+              <th>Behaviour</th>
+            </tr>
+            <tr>
+              <% for (let i = 0; i < data.length; i += 1) { %> 
+              <td><a href="/behaviour/<%= data[i].id %>" style="color: lightgray"><%= data[i].id %></a></td>
+              <td><%= data[i].action %></td>
+            </tr>
+                <% } %>
+          </table>
+        </div>
+      </div>
+<%- include ('partials/footer') %>

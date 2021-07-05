@@ -1,0 +1,31 @@
+<%- include ('partials/head') %>
+<%- include ('partials/navbar') %>
+   
+      
+  <div class="container landing-page"> 
+    <h3>Bird watching records</h3>
+    <br>
+      <div class="table-responsive">
+        <table class="table">
+          <tr>
+            <th>Date</th>
+            <th class="d-none d-sm-table-cell">Flock size</th>
+            <th>Species</th>
+            <th id="delete-heading">Delete</th>
+          </tr>
+          <tr>
+            <% for (let i = 0; i < allNotes.length; i += 1) { %> 
+            <td><a href="/note/<%= allNotes[i].id %>" style="color: darkslategray"><%= allNotes[i].date %></a></td>
+            
+            <td><%= allNotes[i].flock_size %></td>
+            <td><%= allNotes[i].name %></td>
+            <td>
+              <form id="delete-button" action="/note/<%= allNotes[i].id %>/delete?_method=DELETE" method="POST">
+                <button class="btn btn-sm btn-outline" type="submit"><i class="fa fa-trash-alt"></i></button>
+              </form></td>
+          </tr>
+              <% } %>
+        </table>
+      </div>
+  </div>
+    <%- include ('partials/footer') %>
