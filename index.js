@@ -4,7 +4,7 @@ import methodOverride from 'method-override';
 import cookieParser from 'cookie-parser';
 import jsSHA from 'jssha';
 
-const SALT = 'why are we doing this';
+const SALT = 'pepper pots';
 
 const { Pool } = pg;
 
