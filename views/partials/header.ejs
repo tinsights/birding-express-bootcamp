@@ -64,7 +64,14 @@
               <a class="nav-link" href="/note">Submit</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/random">Random Sighting</a>
+              <a class="nav-link" href="/login">Login</a>
+            </li>
+            <li>
+              <form id="logout_form" action="/logout?_method=DELETE" method="POST">
+                <a href="javascript:;" onclick="document.getElementById('logout_form').submit();" class="nav-link">
+                  Logout</a
+                >
+              </form>
             </li>
           </ul>
         </div>

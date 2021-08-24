@@ -33,9 +33,10 @@ setTimeout(() => {
   app.get('/note/:id', showNote);
   app.get('/login', login);
   app.post('/login', login);
-  // app.delete('/logout', logout);
+  app.delete('/logout', logout);
   app.get('/signup', signup);
   app.post('/signup/', signup);
+  // app.post('/note/:id/comment', submitComment);
 
   // COMFORTABLE
   // app.get('/note/:id/edit', editNote);
@@ -111,8 +112,8 @@ const submitNote = (req, res) => {
         const noteId = entryResult.rows[0].id;
         console.log(noteId);
         console.log('behaviour:', birdData.behaviour);
-
-        birdData.behaviour.forEach((behaviour) => {
+        const [...behaviourArr] = birdData.behaviour;
+        behaviourArr.forEach((behaviour) => {
           const behaviourIdQuery = `SELECT id FROM behaviour WHERE behaviour = '${behaviour}'`;
 
           pool.query(behaviourIdQuery, (behaviourIdQueryError, behaviourIdQueryResult) => {
@@ -231,4 +232,11 @@ const login = (req, res) => {
       }
     });
   }
+};
+
+const logout = (req, res) => {
+  res.clearCookie('loggedIn');
+  res.clearCookie('userId');
+  res.clearCookie('loggedInHash');
+  res.redirect('/login');
 };
